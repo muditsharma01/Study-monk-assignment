@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recruitment Solution - Homepage</title>
+  <link rel="stylesheet" type="text/css" href="./Styles/Home.css">
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="Candidate.html">Candidate Search</a></li>
+        <li><a href="Login.html">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Streamline Your Hiring Process</h1>
+      <p>Discover the power of our online recruitment solution and find the best candidates for your company.</p>
+      <a href="Candidate.html" class="cta-button">Get Started</a>
+    </div>
+  </section>
+  
+<hr>
+<section class="features">
+  <div class="container">
+    <h2>Key Features</h2>
+    <ul>
+      <li>
+        <span class="icon"><i class="fas fa-search"></i></span>
+        <h3>Efficient candidate sourcing</h3>
+        <p>Find qualified candidates quickly and easily.</p>
+      </li>
+      <li>
+        <span class="icon"><i class="fas fa-clipboard-check"></i></span>
+        <h3>Automated screening and assessment</h3>
+        <p>Streamline the evaluation process with automated screening and assessment tools.</p>
+      </li>
+      <li>
+        <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+        <h3>Streamlined interview scheduling</h3>
+        <p>Schedule and manage interviews seamlessly.</p>
+      </li>
+      <li>
+        <span class="icon"><i class="fas fa-users"></i></span>
+        <h3>Collaborative hiring tools</h3>
+        <p>Enable collaboration among team members throughout the hiring process.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr>
+  <section class="benefits">
+    <div class="container">
+      <h2>Benefits of Our Recruitment Solution</h2>
+      <div class="benefits-grid">
+        <div class="benefit">
+          <img src="https://cdn-icons-png.flaticon.com/512/1451/1451868.png" alt="Benefit 1">
+          <h3>Time Saving</h3>
+          <p>Our platform automates the entire hiring process, saving you valuable time and effort.</p>
+        </div>
+        <div class="benefit">
+          <img src="https://cdn-icons-png.flaticon.com/512/5371/5371017.png" alt="Benefit 2">
+          <h3>Enhanced Collaboration</h3>
+          <p>Our collaborative hiring tools enable seamless communication and collaboration among team members.</p>
+        </div>
+        <div class="benefit">
+          <img src="https://cdn-icons-png.flaticon.com/512/3094/3094831.png" alt="Benefit 3">
+          <h3>Improved Efficiency</h3>
+          <p>With our solution, you can efficiently source, screen, and evaluate candidates, improving the efficiency of your hiring process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial">
+        <img src="https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?w=1060&t=st=1688737517~exp=1688738117~hmac=64b28b5629aae08adda5b2b0a8af41800a8a28ff5302398b2cfc426b3bc82437" alt="Client 1">
+        <p>"Using the recruitment solution has transformed our hiring process. It's intuitive, efficient, and has helped us find exceptional talent for our company."</p>
+        <h4>John Doe</h4>
+        <span>CEO, ABC Company</span>
+      </div>
+      <div class="testimonial">
+        <img src="https://img.freepik.com/free-photo/smiley-businesswoman-posing-outdoors-with-arms-crossed-copy-space_23-2148767055.jpg?w=996&t=st=1688737639~exp=1688738239~hmac=400acd55b5a6e589f5e3baa6c036d3efbd37d72cf6c6ca32b4b08b965b26f85d" alt="Client 2">
+        <p>"The online recruitment solution has made our hiring process seamless and hassle-free. We highly recommend it to any organization looking to streamline their hiring."</p>
+        <h4>Jane Smith</h4>
+        <span>HR Manager, XYZ Corporation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions or need assistance? Contact our support team for further information.</p>
+      <a href="#" class="cta-button">Contact Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  const sections = document.querySelectorAll('.features, .testimonials, .benefits');
+
+function checkScroll() {
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight * 0.75) {
+      section.classList.add('fade-in');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkScroll);
+
+</script>
+</html>

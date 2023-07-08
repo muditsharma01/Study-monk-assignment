@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/candidate.css">
+  <title>Candidate Search</title>
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">Candidate Search</a></li>
+        <li><a href="Login.html">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Candidate Search</h1>
+
+  <form id="search-form">
+    <div class="dropdown">
+      <input type="text" id="location-input" placeholder="Enter Country" onclick="showDropdown()">
+      <ul id="location-dropdown">
+        
+      </ul>
+    </div>
+    <div class="dropdown">
+      <input type="text" id="job-role-input" placeholder="Enter Job Role" onclick="showDropdown()">
+      <ul id="job-role-dropdown">
+        
+      </ul>
+    </div>
+    <button type="submit">Search</button>
+  </form>
+
+  <section id="candidate-list">
+    <h2>Search Results</h2>
+    <div id="candidates">
+      <!-- Candidate list will be dynamically populated here -->
+      
+    </div>
+    
+  </section>
+
+  <script src="./JS/candidate.js"></script>
+</body>
+</html>

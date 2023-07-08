@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login and Registration</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .header a {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* Form Container */
+    .form-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Form Title */
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Form Input Fields */
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Form Button */
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+
+    /* Form Switch */
+    .switch-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .switch-form a {
+      text-decoration: none;
+      color: #4CAF50;
+    }
+
+    .switch-form a:hover {
+      color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <a href="Home.html"><img src="https://cdn-icons-png.flaticon.com/512/507/507257.png" alt="Back" width="24" height="24"></a>
+    
+  </div>
+
+  <!-- Login Form -->
+  <div id="loginForm" class="form-container">
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+
+    <div class="switch-form">
+      <p>Don't have an account? <a href="#" onclick="showRegistrationForm()">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div id="registrationForm" class="form-container" style="display: none;">
+    <h2>Register</h2>
+    <input type="text" id="registerUsername" placeholder="Username">
+    <input type="password" id="registerPassword" placeholder="Password">
+    <button onclick="register()">Register</button>
+
+    <div class="switch-form">
+      <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+    </div>
+  </div>
+
+  <script>
+    var users = [];
+
+    function showRegistrationForm() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registrationForm').style.display = 'block';
+    }
+
+    function showLoginForm() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registrationForm').style.display = 'none';
+    }
+
+    function register() {
+      var username = document.getElementById('registerUsername').value;
+      var password = document.getElementById('registerPassword').value;
+
+      // Check if username is already taken
+      if (users.some(user => user.username === username)) {
+        alert('Username already exists. Please choose a different username.');
+        return;
+      }
+
+      // Store user data in the users array
+      users.push({ username: username, password: password });
+
+      alert('Registration successful! You can now login with your credentials.');
+
+      // Clear registration form fields
+      document.getElementById('registerUsername').value = '';
+      document.getElementById('registerPassword').value = '';
+
+      showLoginForm();
+    }
+
+    function login() {
+      var username = document.getElementById('loginUsername').value;
+      var password = document.getElementById('loginPassword').value;
+
+      // Check if username and password match stored data
+      var user = users.find(user => user.username === username && user.password === password);
+
+      if (user) {
+        alert('Login successful!');
+        // Redirect to the home page or perform other actions
+        window.location.href = "home.html"; // Replace "home.html" with your actual home page URL
+      } else {
+        alert('Invalid username or password');
+      }
+    }
+  </script>
+</body>
+</html>
